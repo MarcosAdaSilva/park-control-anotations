@@ -140,7 +140,7 @@ public class ParkingSpotController {
         parkingSpotModel.setRegistrationDate(parkingSpotModelOptional.get().getRegistrationDate());
         return ResponseEntity.status(HttpStatus.OK).body(parkingSpotService.save(parkingSpotModel));
     }
-    // methodo com parametros
+    // methodo com parametros para adicionar usamos o @RequestParam + valores
     @GetMapping("/testParam")
     public ResponseEntity<Object> getOneParkingSpotTestParam(@RequestParam(value = "id", required = true) UUID id){
         Optional<ParkingSpotModel> parkingSpotModelOptional = parkingSpotService.findById(id);
